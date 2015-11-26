@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title>jQuery Events</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    $(document).on('ready', function(){
+      // $('#myDiv p').text('Hola hola')
+      $('#fadenator').on('click', function(){
+        $('#myDiv').fadeToggle(500);
+      })
+
+      $('#toggleUnicorn').on('click', function(){
+        $('#myDiv').toggleClass("unicorn-mode");
+      })
+
+      $('.js-botoncique').on('mouseover', function(event){
+        var currentElement = event.currentTarget;
+        $(currentElement).fadeToggle(500);
+      })
+    })
+    </script>
+    <div id="myDiv">
+      <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
+      <h1 id="title">jQuery exercises</h1>
+      <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>fem</li>
+      </ul>
+    </div>
+
+    <div class="js-buttons">
+      <button type="button" class="js-botoncique">#1</button>
+      <button type="button" class="js-botoncique">#2</button>
+      <button type="button" class="js-botoncique">#3</button>
+      <button type="button" class="js-botoncique">#4</button>
+      <button type="button" class="js-botoncique">#5</button>
+    </div>
+    <br><br><br><br>
+    <button type="button" id="fadenator">FADE</button>
+    <button type="button" id="toggleUnicorn">Unicorn Mode</button>
+
+    <style>
+      .unicorn-mode{
+        color: red;
+      }
+    </style>
+  </body>
+</html>
